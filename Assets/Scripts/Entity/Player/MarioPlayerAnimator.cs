@@ -551,6 +551,7 @@ namespace NSMB.Entities.Player {
             TryCreateMaterialBlock();
             int ps = mario->CurrentPowerupState switch {
                 PowerupState.FireFlower => 1,
+                PowerupState.SuperBallFlower => 1,
                 PowerupState.PropellerMushroom => 2,
                 PowerupState.IceFlower => 3,
                 PowerupState.HammerSuit => 4,

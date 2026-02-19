@@ -167,8 +167,8 @@ namespace Quantum {
       // avoid using the source's scale in order to not scale the settings twice
       var sourceScale = collider.transform.IsChildOf(reference) ? Vector3.one : collider.transform.lossyScale;
 
+      #if QUANTUM_ENABLE_PHYSICS3D && !QUANTUM_DISABLE_PHYSICS3D
       switch (collider) {
-#if QUANTUM_ENABLE_PHYSICS3D && !QUANTUM_DISABLE_PHYSICS3D
         case BoxCollider box:
           config.ShapeType      = Shape3DType.Box;
           config.BoxExtents     = Vector3.Scale(box.size / 2, sourceScale).ToFPVector3();
@@ -193,17 +193,17 @@ namespace Quantum {
           config.RotationOffset = (Quaternion.Inverse(reference.transform.rotation) * capsule.transform.rotation).eulerAngles.ToFPVector3();
           isTrigger             = capsule.isTrigger;
           break;
-#endif
 
         default:
           throw new NotSupportedException($"Type {collider.GetType().FullName} not supported, needs to be one of: "
-#if QUANTUM_ENABLE_PHYSICS3D && !QUANTUM_DISABLE_PHYSICS3D
             + $"{nameof(BoxCollider)}, {nameof(SphereCollider)}"
-#endif
           );
       }
-    
       return true;
+      #else
+      isTrigger = false;
+      return false;
+      #endif
     }
     
     private static string CreateTypeNotSupportedMessage(Type colliderType, params Type[] supportedTypes) {

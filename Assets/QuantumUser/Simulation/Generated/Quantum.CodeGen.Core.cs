@@ -98,6 +98,7 @@ namespace Quantum {
     MiniMushroom,
     Mushroom,
     FireFlower,
+    SuperBallFlower,
     IceFlower,
     PropellerMushroom,
     BlueShell,

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63caed69988a51547838713bab6e20ed, type: 3}
+  m_Name: SuperBallProjectile
+  m_EditorClassIdentifier: 
+  Identifier:
+    Path: QuantumUser/Resources/AssetObjects/Projectile/SuperBallProjectile
+    Guid:
+      Value: 1895467668516303360
+  Effect: 0
+  Bounce: 1
+  Ricochet: 1
+  Speed:
+    RawValue: 425984
+  BounceStrength:
+    RawValue: 442368
+  RicochetDamping:
+    RawValue: 55706
+  Gravity:
+    X:
+      RawValue: 0
+    Y:
+      RawValue: -2828796
+  DestroyOnSecondBounce: 0
+  DestroyOnHit: 1
+  LockTo45Degrees: 1
+  InheritShooterVelocity: 0
+  HasCollision: 1
+  DoesntEffectBlueShell: 1
+  DestroyParticleEffect: 9
+  ShootSound: 44

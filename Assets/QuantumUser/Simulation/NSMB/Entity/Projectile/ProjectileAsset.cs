@@ -5,8 +5,10 @@ using Quantum;
 public class ProjectileAsset : AssetObject {
     public ProjectileEffectType Effect;
     public bool Bounce = true;
+    public bool Ricochet;
     public FP Speed;
     public FP BounceStrength;
+    public FP RicochetDamping = Constants._0_85;
     public FPVector2 Gravity;
     public bool DestroyOnSecondBounce;
     public bool DestroyOnHit = true;

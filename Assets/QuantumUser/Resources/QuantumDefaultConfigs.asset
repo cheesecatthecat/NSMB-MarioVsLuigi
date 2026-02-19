@@ -307,6 +307,9 @@ MonoBehaviour:
   IceballPrototype:
     Id:
       Value: 1531419298539715423
+  SuperBallPrototype:
+    Id:
+      Value: 1420959643890948331
   HammerPrototype:
     Id:
       Value: 1406353302584805307

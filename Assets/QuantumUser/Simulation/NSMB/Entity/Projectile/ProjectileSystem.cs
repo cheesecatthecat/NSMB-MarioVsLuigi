@@ -45,19 +45,39 @@ namespace Quantum {
             var projectile = filter.Projectile;
             var physicsObject = filter.PhysicsObject;
 
-            // Despawn
-            if ((physicsObject->IsTouchingLeftWall
-                || physicsObject->IsTouchingRightWall
-                || physicsObject->IsTouchingCeiling
-                || (physicsObject->IsTouchingGround && (!asset.Bounce || (projectile->HasBounced && asset.DestroyOnSecondBounce)))
-                || PhysicsObjectSystem.BoxInGround(f, filter.Transform->Position, filter.PhysicsCollider->Shape)) && !physicsObject->DisableCollision) {
+            bool touchingLeft = physicsObject->IsTouchingLeftWall;
+            bool touchingRight = physicsObject->IsTouchingRightWall;
+            bool touchingCeiling = physicsObject->IsTouchingCeiling;
+            bool touchingGround = physicsObject->IsTouchingGround;
 
-                Destroy(f, filter.Entity, asset.DestroyParticleEffect);
-                return;
+            if (!physicsObject->DisableCollision) {
+                // Ricochet off walls/ceiling for special projectiles (e.g., Super Ball).
+                if (asset.Ricochet) {
+                    if (touchingLeft && physicsObject->Velocity.X < 0) {
+                        projectile->FacingRight = true;
+                        projectile->Speed *= asset.RicochetDamping;
+                    } else if (touchingRight && physicsObject->Velocity.X > 0) {
+                        projectile->FacingRight = false;
+                        projectile->Speed *= asset.RicochetDamping;
+                    }
+
+                    if (touchingCeiling && physicsObject->Velocity.Y > 0) {
+                        physicsObject->Velocity.Y = -FPMath.Abs(physicsObject->Velocity.Y) * asset.RicochetDamping;
+                    }
+                }
+
+                // Despawn on hard collisions unless ricochet is enabled.
+                if (((touchingLeft || touchingRight || touchingCeiling) && !asset.Ricochet)
+                    || (touchingGround && (!asset.Bounce || (projectile->HasBounced && asset.DestroyOnSecondBounce)))
+                    || PhysicsObjectSystem.BoxInGround(f, filter.Transform->Position, filter.PhysicsCollider->Shape)) {
+
+                    Destroy(f, filter.Entity, asset.DestroyParticleEffect);
+                    return;
+                }
             }
 
             // Bounce
-            if (physicsObject->IsTouchingGround && asset.Bounce) {
+            if (touchingGround && asset.Bounce) {
                 FP boost = asset.BounceStrength * FPMath.Abs(FPMath.Sin(physicsObject->FloorAngle * FP.Deg2Rad)) * FP._1_25;
                 if ((physicsObject->FloorAngle > 0) == projectile->FacingRight) {
                     boost = 0;

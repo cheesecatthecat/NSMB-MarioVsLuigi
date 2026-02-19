@@ -44,10 +44,15 @@ namespace Quantum {
           return;
         }
         SpriteRenderer sRenderer = GetComponentInChildren<SpriteRenderer>();
-        sRenderer.size = new Vector2(Prototype.WidthTiles * 0.5f, (Prototype.HeightTiles.AsFloat + 1) * 0.5f);
+        if (sRenderer != null) {
+          sRenderer.size = new Vector2(Prototype.WidthTiles * 0.5f, (Prototype.HeightTiles.AsFloat + 1) * 0.5f);
+        }
       });
 
       QuantumEntityPrototype entityPrototype = GetComponent<QuantumEntityPrototype>();
+      if (entityPrototype == null) {
+        return;
+      }
       Shape2DConfig shape = entityPrototype.PhysicsCollider.Shape2D;
       shape.ShapeType = Shape2DType.Compound;
 

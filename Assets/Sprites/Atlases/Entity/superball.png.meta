@@ -1,45 +1,21 @@
-fileFormatVersion: 2
-guid: 794bc215dd02bf34ab2cfae7702bfdfd
+﻿fileFormatVersion: 2
+guid: 37636cc43e9f4e819726af53856a5d92
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3410918491446568398
-    second: powerups_0
+      213: 5353841184698615464
+    second: superball_0
   - first:
-      213: -7415331047110381915
-    second: powerups_1
+      213: 750297706712597742
+    second: superball_1
   - first:
-      213: 621560852509794982
-    second: powerups_2
+      213: -8127487528002223245
+    second: superball_2
   - first:
-      213: 4928671260392873470
-    second: powerups_3
-  - first:
-      213: 4536303970436761004
-    second: powerups_4
-  - first:
-      213: -499814844998443567
-    second: powerups_5
-  - first:
-      213: -6090384608550177697
-    second: powerups_6
-  - first:
-      213: -4108787663010400821
-    second: powerups_7
-  - first:
-      213: 2834573260081099437
-    second: powerups_8
-  - first:
-      213: -2004970489635254543
-    second: powerups_9
-  - first:
-      213: 3366297153455892705
-    second: powerups_10
-  - first:
-      213: -5050012345678901234
-    second: SuperBallFlower
+      213: -3915765450054648673
+    second: superball_3
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -80,7 +56,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -103,7 +79,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 1
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,7 +92,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,7 +105,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -142,7 +118,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -155,7 +131,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -168,8 +144,8 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
+  - serializedVersion: 4
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -185,216 +161,161 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mushroom
+      name: superball_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec5eb70db44065f20800000000000000
-      internalID: 3410918491446568398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1-Up
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ae6f0563b3771990800000000000000
-      internalID: -7415331047110381915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiniMushroom
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 19
+        y: 7
         width: 11
-        height: 10
+        height: 11
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a2a22c5d4a30a800800000000000000
-      internalID: 621560852509794982
+      spriteID: 8a641dd013aac4a40800000000000000
+      internalID: 5353841184698615464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireFlower
+      name: superball_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 11
+        y: 7
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4056cf9c7996a00800000000000000
+      internalID: 750297706712597742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: superball_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 7
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3738201972d553f80800000000000000
+      internalID: -8127487528002223245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: superball_3
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 7
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9cbebdd11868a9c0800000000000000
+      internalID: -3915765450054648673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: superball_4
+      rect:
+        serializedVersion: 2
+        x: 2
         y: 0
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f543cdd777b9a7ba0800000000000000
-      internalID: -6090384608550177697
+      spriteID: 2a6be0aaa081d284a866dbe715af0061
+      internalID: -1737155869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Star
+      name: superball_5
       rect:
         serializedVersion: 2
-        x: 16
+        x: 8
         y: 0
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc5f1c8c367aaf6c0800000000000000
-      internalID: -4108787663010400821
+      spriteID: ba54fb353d3545b43b665e6ecc3f96c9
+      internalID: -1295335873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shell
+      name: superball_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 14
+        y: 1
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da274f0ac5d665720800000000000000
-      internalID: 2834573260081099437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IceFlower
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33e41dfc73ff8de47b595b9de634a78f
-      internalID: 4928671260392873470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Star_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4681105f9cd66b640befbb601748a64e
-      internalID: -1073110140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HammerSuit
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77ece1eb59cb24d4e9759108aa38fdd1
-      internalID: -1109677166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SuperBallFlower
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13e4b21b0f9d4cad8742f27fe18f84d0
-      internalID: -5050012345678901234
+      spriteID: ed30fa9d75f502840bd28519d39ec0ff
+      internalID: 1454502836
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
@@ -404,25 +325,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      1-Up: -7415331047110381915
-      CatSuit: -1629917848
-      FireFlower: -6090384608550177697
-      HammerSuit: -1109677166
-      IceFlower: 4928671260392873470
-      JumpSuit: 1662652401
-      MiniMushroom: 621560852509794982
-      Mushroom: 3410918491446568398
-      Shell: 2834573260081099437
-      Star: -4108787663010400821
-      Star_2: -1073110140
-      SuperBallFlower: -5050012345678901234
-      powerups_10: 3366297153455892705
-      powerups_4: 4536303970436761004
-      powerups_5: -499814844998443567
-      powerups_9: -2004970489635254543
+      superball_0: 5353841184698615464
+      superball_1: 750297706712597742
+      superball_2: -8127487528002223245
+      superball_3: -3915765450054648673
+      superball_4: -1737155869
+      superball_5: -1295335873
+      superball_6: 1454502836
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+

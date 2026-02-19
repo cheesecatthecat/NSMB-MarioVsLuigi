@@ -10,36 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a77651c98eb177748a49241e377f4457, type: 3}
-  m_Name: HammerSuit
+  m_Name: SuperBallFlower
   m_EditorClassIdentifier: 
   Identifier:
-    Path: QuantumUser/Resources/AssetObjects/Items/HammerSuit
+    Path: QuantumUser/Resources/AssetObjects/Items/SuperBallFlower
     Guid:
-      Value: 402398838204577684
+      Value: 6961725618724096000
   Prefab:
     Id:
-      Value: 1472665878288241371
+      Value: 1380461836684106253
   SpawnChance:
-    RawValue: 32768
+    RawValue: 131072
   LosingSpawnBonus:
-    RawValue: 98304
+    RawValue: 49152
   BlockSpawnSoundEffect: 69
   BigPowerup: 0
   VerticalPowerup: 0
-  CustomPowerup: 1
+  CustomPowerup: 0
   LivesOnlyPowerup: 0
-  CanSpawnFromBlock: 1
+  CanSpawnFromBlock: 0
   OnlyOneCanExist: 0
   Type: 0
-  State: 8
+  State: 4
   SoundPlaysEverywhere: 0
   SoundEffect: 16
-  ReserveSprite: {fileID: -645946170, guid: a87d3b028baa82640b06b88398a8c4f0, type: 3}
+  ReserveSprite: {fileID: -8150682275588731904, guid: a87d3b028baa82640b06b88398a8c4f0,
+    type: 3}
   AvoidPlayers: 0
   Speed:
-    RawValue: 98304
+    RawValue: 0
   BounceStrength:
-    RawValue: 524288
+    RawValue: 0
   TerminalVelocity:
     RawValue: -524288
   FollowAnimationCurve: 0
