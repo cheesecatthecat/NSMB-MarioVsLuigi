@@ -15,10 +15,11 @@ MonoBehaviour:
   Identifier:
     Path: QuantumUser/Resources/AssetObjects/Projectile/SuperBallProjectile
     Guid:
-      Value: 1895467668516303360
+      Value: 507133897658879977
   Effect: 0
   Bounce: 1
   Ricochet: 1
+  Strict45Bounce: 1
   Speed:
     RawValue: 425984
   BounceStrength:
@@ -29,7 +30,8 @@ MonoBehaviour:
     X:
       RawValue: 0
     Y:
-      RawValue: -2828796
+      RawValue: 0
+  LifetimeFrames: 240
   DestroyOnSecondBounce: 0
   DestroyOnHit: 1
   LockTo45Degrees: 1

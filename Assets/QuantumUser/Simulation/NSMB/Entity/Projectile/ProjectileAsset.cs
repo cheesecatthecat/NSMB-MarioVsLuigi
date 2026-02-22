@@ -6,10 +6,12 @@ public class ProjectileAsset : AssetObject {
     public ProjectileEffectType Effect;
     public bool Bounce = true;
     public bool Ricochet;
+    public bool Strict45Bounce;
     public FP Speed;
     public FP BounceStrength;
     public FP RicochetDamping = Constants._0_85;
     public FPVector2 Gravity;
+    public byte LifetimeFrames;
     public bool DestroyOnSecondBounce;
     public bool DestroyOnHit = true;
     public bool LockTo45Degrees = true;

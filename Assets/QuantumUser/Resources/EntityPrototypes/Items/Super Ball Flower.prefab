@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 517697212848946230, guid: 6dbe32ab0e6d5bc4c8fe9722f4c86d19,
         type: 3}
       propertyPath: Prototype.Scriptable.Id.Value
-      value: 6961725618724096000
+      value: 696172561872409600
       objectReference: {fileID: 0}
     - target: {fileID: 1017215213198693185, guid: 6dbe32ab0e6d5bc4c8fe9722f4c86d19,
         type: 3}
@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 1256801405142820976, guid: 6dbe32ab0e6d5bc4c8fe9722f4c86d19,
         type: 3}
       propertyPath: Prototype.Scriptable.Id.Value
-      value: 6961725618724096000
+      value: 696172561872409600
       objectReference: {fileID: 0}
     - target: {fileID: 3502658418062677356, guid: 6dbe32ab0e6d5bc4c8fe9722f4c86d19,
         type: 3}

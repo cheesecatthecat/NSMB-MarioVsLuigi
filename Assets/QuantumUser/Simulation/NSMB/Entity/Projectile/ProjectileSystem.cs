@@ -23,6 +23,17 @@ namespace Quantum {
             var physicsObject = filter.PhysicsObject;
             var asset = f.FindAsset(projectile->Asset);
 
+            // Reuse Combo as a lightweight per-projectile age counter (0-255 frames).
+            if (asset.LifetimeFrames > 0) {
+                if (projectile->Combo < byte.MaxValue) {
+                    projectile->Combo++;
+                }
+                if (projectile->Combo >= asset.LifetimeFrames) {
+                    Destroy(f, filter.Entity, asset.DestroyParticleEffect);
+                    return;
+                }
+            }
+
             // Check to instant-despawn if spawned inside a wall
             if (!physicsObject->DisableCollision && !projectile->CheckedCollision) {
                 if (PhysicsObjectSystem.BoxInGround(f, transform->Position, collider->Shape)) {
@@ -51,6 +62,35 @@ namespace Quantum {
             bool touchingGround = physicsObject->IsTouchingGround;
 
             if (!physicsObject->DisableCollision) {
+                if (asset.Strict45Bounce) {
+                    if (PhysicsObjectSystem.BoxInGround(f, filter.Transform->Position, filter.PhysicsCollider->Shape)) {
+                        Destroy(f, filter.Entity, asset.DestroyParticleEffect);
+                        return;
+                    }
+
+                    bool collided = false;
+                    if ((touchingLeft && !projectile->FacingRight) || (touchingRight && projectile->FacingRight)) {
+                        projectile->FacingRight = !projectile->FacingRight;
+                        collided = true;
+                    }
+
+                    FP verticalSpeed = FPMath.Abs(projectile->Speed);
+                    if (touchingGround) {
+                        projectile->HasBounced = true;
+                        physicsObject->Velocity.Y = verticalSpeed;
+                        physicsObject->IsTouchingGround = false;
+                        collided = true;
+                    } else if (touchingCeiling) {
+                        projectile->HasBounced = false;
+                        physicsObject->Velocity.Y = -verticalSpeed;
+                        collided = true;
+                    } else if (collided) {
+                        physicsObject->Velocity.Y = projectile->HasBounced ? verticalSpeed : -verticalSpeed;
+                    }
+
+                    return;
+                }
+
                 // Ricochet off walls/ceiling for special projectiles (e.g., Super Ball).
                 if (asset.Ricochet) {
                     if (touchingLeft && physicsObject->Velocity.X < 0) {

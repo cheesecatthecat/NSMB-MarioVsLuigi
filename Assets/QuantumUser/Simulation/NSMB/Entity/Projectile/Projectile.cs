@@ -11,6 +11,7 @@ namespace Quantum {
             // Vars
             Owner = owner;
             FacingRight = right;
+            Combo = 0;
 
             // Speed
             Speed = asset.Speed;
@@ -40,6 +41,7 @@ namespace Quantum {
             // Vars
             Owner = owner;
             FacingRight = right;
+            Combo = 0;
 
             // Initial Velocity
             FPVector2 velocity = playerHoldingUp ? new FPVector2(FP.FromString("3.8822"), FP.FromString("14.4888")) : new FPVector2(FP.FromString("6.25"), FP.FromString("7.5"));
