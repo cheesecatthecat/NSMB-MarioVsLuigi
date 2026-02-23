@@ -21,7 +21,7 @@ MonoBehaviour:
   Ricochet: 1
   Strict45Bounce: 1
   Speed:
-    RawValue: 425984
+    RawValue: 283989
   BounceStrength:
     RawValue: 442368
   RicochetDamping:
