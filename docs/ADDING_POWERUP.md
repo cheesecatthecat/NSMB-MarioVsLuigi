@@ -55,6 +55,26 @@ This process avoids two common failure modes:
 - Collect enough coins to trigger reward spawn.
 - Validate item spawns and that gameplay behavior (state transitions, projectile spawn, reserve sprite) works.
 
+7. Player costume/shader setup (if the powerup changes Mario/Luigi look)
+- Decide which `PowerupState` index should be used by the player shader.
+  - Current mapping is in `Assets/Scripts/Entity/Player/MarioPlayerAnimator.cs` (`ps` switch inside `HandleMiscStates`).
+  - Example: `FireFlower => 1`, `SuperBallFlower => 5`.
+- If using a new shader state index, ensure shader state range supports it in both graphs:
+  - `Assets/Shaders/3D/PlayerShader.shadergraph`
+  - `Assets/Shaders/3D/RainbowPlayerShader.shadergraph`
+  - Update `PowerupState` property max range (for example from `1` to `5`).
+- If the shader uses the player texture array path (default setup), add texture slices for the new state:
+  - Source arrays:
+    - `Assets/Models/Players/mario_big/mario_big.png`
+    - `Assets/Models/Players/luigi_big/luigi_big.png`
+  - Append new costume rows to the bottom of each image (same width/layout as existing rows).
+  - Increase `flipbookRows` in:
+    - `Assets/Models/Players/mario_big/mario_big.png.meta`
+    - `Assets/Models/Players/luigi_big/luigi_big.png.meta`
+  - Example: `20 -> 24` when appending four 64px rows.
+- Reimport the updated textures and shader graphs in Unity (or restart editor).
+- Verify in play mode that collecting the powerup updates costume colors/textures as expected.
+
 ## Randomness Expectations
 
 `GetRandomItem(...)` is weighted, not uniform.
@@ -96,6 +116,14 @@ If all candidates are filtered, fallback item is returned.
 - Confirm room rules and stage filters are not excluding most items.
 - Confirm this is not fallback collapse.
 
+4. Player becomes solid black / wrong costume color
+- Cause (common): shader state index points to a path with no valid texture data.
+- Fix path:
+  - Confirm `MarioPlayerAnimator` sets the intended `PowerupState` shader value.
+  - Confirm shader graph `PowerupState` range includes that value.
+  - Confirm player texture-array source images contain rows for that state.
+  - Confirm `flipbookRows` matches the new total rows and assets were reimported.
+
 ## Files Typically Touched
 
 - `Assets/QuantumUser/Resources/AssetObjects/Items/<NewPowerup>.asset`
@@ -105,6 +133,11 @@ If all candidates are filtered, fallback item is returned.
 - `Assets/QuantumUser/Resources/AssetObjects/Projectile/<NewProjectile>.asset` (if needed)
 - `Assets/QuantumUser/Resources/QuantumDefaultConfigs.asset` (if config wiring needed)
 - `Assets/QuantumUser/Simulation/NSMB/Entity/Powerup/Powerup.qtn` and generated code if adding new `PowerupState`
+- `Assets/Scripts/Entity/Player/MarioPlayerAnimator.cs` (shader `PowerupState` mapping)
+- `Assets/Shaders/3D/PlayerShader.shadergraph` (standard player shader)
+- `Assets/Shaders/3D/RainbowPlayerShader.shadergraph` (starman/rainbow shader)
+- `Assets/Models/Players/mario_big/mario_big.png` + `.meta` (texture array source + row count)
+- `Assets/Models/Players/luigi_big/luigi_big.png` + `.meta` (texture array source + row count)
 
 ## Commit Checklist
 
